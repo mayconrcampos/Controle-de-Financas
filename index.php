@@ -23,11 +23,39 @@ session_start();
             width: 400px;
         }
         body {
-            background-color: #FFDFCC;
+            background-color: #ffdfcc;
+        }
+        header {
+            margin-bottom: 80px;
+        }
+        nav div ul li {
+            color: white !important;
         }
     </style>
 </head>
 <body>
+
+<header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#"><img src="./css/money.png" width="250px"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Índice <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sobre.php">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contato.php">Contato</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
 
 <div id="login">
 <img src="./css/money.png" width="370px">

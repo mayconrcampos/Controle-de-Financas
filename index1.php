@@ -19,11 +19,13 @@ if($_SESSION['logado']){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controle Financeiro Doméstico</title>
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <!-- Início da Nav -->
-<body style="background-color:#FFDFCC">
-<nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color:#FFDFCC">
+
+
+<body class="bodyindex">
+<nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color:#ffdfcc"> 
   <a class="navbar-brand" href="#"><img src="css/money.png" width="320px"></a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
