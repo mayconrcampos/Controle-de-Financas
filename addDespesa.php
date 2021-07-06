@@ -24,7 +24,7 @@ if($_SESSION['logado']){
 
 
 
-<body style="background-color:#ffdfcc">
+<body style="background-color:#ffdfcc; text-align:center;">
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#ffdfcc">
   <a class="navbar-brand" href="index1.php"><img src="css/money.png" width="320px" alt=""></a>
 
@@ -58,7 +58,7 @@ if($_SESSION['logado']){
 </nav>
 <h6 class="text text-danger" style="text-align: left;">Usuário: <?php echo $userlogin; ?> <a href="sair.php">Sair</a></h6>
 
-    <div style="background-color:#f8d7da">
+    <div style="background-color:#f8d7da; text-align:center; padding:10px;">
         <form action="" method="post">
             <div class="form-group form-check form-check-inline">
             <fieldset>
@@ -92,12 +92,17 @@ if($_SESSION['logado']){
                     echo "ERRO ao adicionar nova descrição de despesa.";   
                 }
             }else{
-                echo "É necessário preencher o campo antes de inserir.";
+                $_SESSION['msg'] = "É necessário preencher o campo antes de inserir.";
             
             }
+
+            if($_SESSION['msg']):
+              echo $_SESSION['msg'];
+              $_SESSION['msg'] = "";
+            endif;
         ?>
     </div>
-  
+            <br>
     <footer style="background-color:#ffdfcc">Programa de Controle Financeiro</footer>
     
     <script src="js/jquery-3.5.1.slim.min.js"></script>

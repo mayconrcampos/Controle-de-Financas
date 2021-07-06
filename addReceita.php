@@ -25,7 +25,7 @@ if($_SESSION['logado']){
 
 
 
-<body style="background-color:#ffdfcc">
+<body style="background-color:#ffdfcc; text-align:center;">
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#ffdfcc">
   <a class="navbar-brand" href="index1.php"><img src="css/money.png" width="320px" alt=""></a>
 
@@ -59,7 +59,7 @@ if($_SESSION['logado']){
 </nav>
 <h6 class="text text-danger" style="text-align: left;">Usuário: <?php echo $userlogin; ?> <a href="sair.php">Sair</a></h6>
 
-    <div class="alert alert-primary" role="alert">
+    <div style="text-align: center;" class="alert alert-primary" role="alert">
         <form action="" method="post">
             <div class="form-group form-check form-check-inline">
             <fieldset>
