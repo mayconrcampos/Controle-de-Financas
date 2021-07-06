@@ -165,17 +165,31 @@ if($_SESSION['logado']){
                     
                     $contaReceita = 0;
                     $contaDespesa = 0;
-                    $vazio = 0;         
+                    $DespesaFutura = 0;
+                    $ReceitaFutura = 0;
+                    $vazio = 0;  
+
+                    $queryContasFuturas = mysqli_query($conn, "SELECT valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', tipo FROM controle WHERE data > '$data_fim'");
+
+                    while($resContasFuturas = mysqli_fetch_assoc($queryContasFuturas)){
+                      $tipo = ($resContasFuturas['tipo']) ? true : false; 
+                      if($tipo): $ReceitaFutura += $resContasFuturas['valor'];
+                      else: $DespesaFutura += $resContasFuturas['valor'];
+                      endif;
+                    }
+
+                           
                     while($conta = mysqli_fetch_assoc($queryContas)){
                         $vazio++;                                     ?>
                     <tr>
-                        <?php 
+                        <?php
                             $tipo = ($conta['tipo']) ? true : false; 
                             if($tipo): $contaReceita += $conta['valor'];
                             else: $contaDespesa += $conta['valor'];
                             endif;
 
                             $saldo = $contaReceita - $contaDespesa;
+                         
                         ?>
                         
                         <td class="text-body"><?php echo $conta['descricao'];?></td>
@@ -206,9 +220,9 @@ if($_SESSION['logado']){
                     <tr><td></td></tr>
                     <tr><td></td></tr>
                     <tr class="fixed-bottom p-1">
-                        <td class="table-primary border rounded">Total Receitas <strong>(R$)</strong></td>
+                        <td class="table-primary border rounded">Total + <strong>(R$)</strong></td>
                         <td class="table-primary border rounded"><?php echo number_format($contaReceita, 2, ",", ".");?></td>
-                        <td class="table-danger border rounded">Total Despesas <strong>(R$)</strong></td>
+                        <td class="table-danger border rounded">Total - <strong>(R$)</strong></td>
                         <td class="table-danger border rounded"><?php echo number_format($contaDespesa, 2, ",", ".");?></td>
                         <?php 
                             if($saldo < 0):?>
@@ -217,7 +231,12 @@ if($_SESSION['logado']){
                     <?php   else:?>
                                 <td class="table-primary border rounded">Saldo <strong>(R$)</strong></td>
                                 <td class="table-primary border rounded"><?php echo number_format($saldo, 2, ",", ".");?></td>
-                    <?php   endif;?>     
+                    <?php   endif;?>
+    
+                                <td class="table-primary border rounded">A Vencer +(R$)</td>
+                                <td class="table-primary border rounded"><?php echo number_format($ReceitaFutura, 2, ",", ".");?></td>
+                                <td class="table-danger border rounded">A Vencer -(R$)</td>
+                                <td class="table-danger border rounded"><?php echo number_format($DespesaFutura, 2, ",", ".");?></td>
                     </tr>
             </tbody>
         </table>

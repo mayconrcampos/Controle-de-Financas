@@ -59,7 +59,7 @@ if($_SESSION['logado']){
 <h6 class="text text-danger" style="text-align: left;">Usuário: <?php echo $userlogin; ?> <a href="sair.php">Sair</a></h6>
 
 <!--Início da form FFDFCC-->
-    <div class=" border border-dark" style="background-color:#ffefe6">
+    <div class=" border border-dark" style="background-color:#ffefe6; text-align:center;">
 
         <form action="insereContaDB.php" method="post">
             <div class="form-check form-check-inline">

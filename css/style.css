@@ -1,5 +1,5 @@
 .bodyindex {
-    text-align: center;
+    /*text-align: center;*/
     background-color:#ffdfcc !important;
 }
 form {
@@ -20,3 +20,9 @@ form {
 .navlink {
     color: white;
 }
+
+#bodyeditar {
+    background-color:#ffdfcc;
+    text-align:center;
+}
+

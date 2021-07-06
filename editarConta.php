@@ -33,18 +33,18 @@ $linhaConta = mysqli_fetch_assoc($editaConta);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controle Financeiro Doméstico</title>
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 
-<body style="background-color:#ffdfcc">
+<body  style="background-color:#ffdfcc; text-align:center;">
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#ffdfcc">
   <a class="navbar-brand" href="index1.php"><img src="css/money.png" width="320px" alt=""></a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+  <div  class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" href="index1.php"><img src="./css/add.png" width="25px"> Adicionar Receita / Despesa <span class="sr-only">(current)</span></a>
@@ -71,7 +71,7 @@ $linhaConta = mysqli_fetch_assoc($editaConta);
 <h6 class="text text-danger" style="text-align: left;">Usuário: <?php echo $userlogin; ?> <a href="sair.php">Sair</a></h6>
 
 
-    <div style="background-color:#ffefe6">
+    <div  style="background-color:#ffefe6; text-align:center;">
 
         <form action="editaContaDB.php" method="post">
             <div class="form-group form-check form-check-inline">
