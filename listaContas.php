@@ -168,7 +168,8 @@ if($_SESSION['logado']){
                     $DespesaFutura = 0;
                     $ReceitaFutura = 0;
                     $vazio = 0;  
-
+                    
+                    // Query que contabiliza as contas futuras de entrada e saída.
                     $queryContasFuturas = mysqli_query($conn, "SELECT valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', tipo FROM controle WHERE data > '$data_fim'");
 
                     while($resContasFuturas = mysqli_fetch_assoc($queryContasFuturas)){
@@ -233,9 +234,9 @@ if($_SESSION['logado']){
                                 <td class="table-primary border rounded"><?php echo number_format($saldo, 2, ",", ".");?></td>
                     <?php   endif;?>
     
-                                <td class="table-primary border rounded">A Vencer +(R$)</td>
+                                <td class="table-primary border rounded"><a href="listaContasFuturas.php">A Vencer</a> +(R$)</td>
                                 <td class="table-primary border rounded"><?php echo number_format($ReceitaFutura, 2, ",", ".");?></td>
-                                <td class="table-danger border rounded">A Vencer -(R$)</td>
+                                <td class="table-danger border rounded"><a href="listaContasFuturas.php">A Vencer</a> -(R$)</td>
                                 <td class="table-danger border rounded"><?php echo number_format($DespesaFutura, 2, ",", ".");?></td>
                     </tr>
             </tbody>
