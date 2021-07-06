@@ -74,7 +74,6 @@ if($_SESSION['logado']){
 
                 <input type="submit" value="Inserir" class="btn btn-primary btn-lg btn-block">
 
-
             </fieldset>
             </div>
             <br>
