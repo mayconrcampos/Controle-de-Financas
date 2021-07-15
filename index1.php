@@ -160,7 +160,7 @@ if($_SESSION['logado']){
 
    
 
-    <footer class="fixed-bottom"  style="background-color:#ffdfcc">Programa de Controle Financeiro</footer>
+    <footer class="fixed-bottom text-center"  style="background-color:#ffdfcc">Programa para Gerenciamento e Controle Financeiro ® Maycon R. Campos - 07/2021</footer>
 
 
     

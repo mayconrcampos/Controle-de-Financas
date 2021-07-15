@@ -121,7 +121,7 @@ $linhaConta = mysqli_fetch_assoc($editaConta);
                       <label class="input-group-text" for="inputGroupSelect01" name="categoria">Categoria</label>
                     </div>
                     <select class="custom-select" id="inputGroupSelect01" name="categoria" value="">
-                        <option selected>------ Receitas ------</option>
+                            <option selected>------ Receitas ------</option>
                       
                       <?php
                         $queryReceitas = mysqli_query($conn, "SELECT id, categoria FROM cat_receita ORDER BY categoria ASC");
@@ -129,14 +129,14 @@ $linhaConta = mysqli_fetch_assoc($editaConta);
                             <option value=<?php echo $receita['categoria']; ?>><?php echo $receita['categoria'] ;?></option>
                 <?php   
                         }?>
-                        <option selected>------ Despesas ------</option>
+                            <option selected>------ Despesas ------</option>
                         <?php
                         $queryDespesas = mysqli_query($conn, "SELECT id, categoria FROM cat_despesa ORDER BY categoria ASC");
                         while($despesa = mysqli_fetch_assoc($queryDespesas)){?>
                             <option value=<?php echo $despesa['categoria']; ?>><?php echo $despesa['categoria'] ;?></option>
                 <?php   
                         }?>
-                        <option selected><?php echo $linhaConta['categoria'];?></option>
+                            <option selected><?php echo $linhaConta['categoria'];?></option>
                     </select>
                     
                 </div>

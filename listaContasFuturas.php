@@ -44,7 +44,7 @@ if($_SESSION['logado']){
         <a class="nav-link" href="index1.php"><img src="./css/add.png" width="25px"> Adicionar Receita / Despesa <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#"><img src="./css/list-ul.svg" width="25px"> Listar Contas / Filtrar por</a>
+        <a class="nav-link" href="listaContas.php"><img src="./css/list-ul.svg" width="25px"> Listar Contas / Filtrar por</a>
       </li>
     </ul>
   </div>
